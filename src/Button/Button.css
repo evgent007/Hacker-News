@@ -1,4 +1,4 @@
-.btn {
+button.btn {
   width: 150px;
   height: 50px;
   border-radius: 10px;
@@ -15,7 +15,7 @@
   color: rgb(49, 154, 154);
 }
 
-.btn1{
+button.btn1{
   width: 60px;
   height: 60px;
   border-radius: 50%;

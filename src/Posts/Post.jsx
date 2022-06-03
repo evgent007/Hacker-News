@@ -2,8 +2,7 @@
 import { useEffect, useState } from 'react'
 import { getItem } from '../api'
 
-function Post({ data, click }) {
-
+function Post({ data }) {
   const [item, setItem] = useState({})
 
   useEffect(() => {
@@ -17,7 +16,7 @@ function Post({ data, click }) {
   // }
 
   return (
-    <div className="pos" id={data} >
+    <div className="pos">
       <h3>{item.title && item.title}</h3>
       <p>
         <b>Автор:</b>
@@ -27,7 +26,6 @@ function Post({ data, click }) {
           <i> {new Date(item.time * 1000).toUTCString()} </i>
         </span>
       </p>
-      
     </div>
   )
 }

@@ -13,5 +13,8 @@
   /* padding: 10px 15px; */
   /* font-size: 22px; */
   font-family: sans-serif;
-  /* color: rgb(24, 21, 21); */
+  color: rgb(24, 21, 21);
+}
+a {
+  text-decoration:none
 }

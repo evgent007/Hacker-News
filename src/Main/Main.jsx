@@ -4,7 +4,6 @@ import Posts from '../Posts/Posts'
 import Item from '../Posts/Item'
 import NotFound from './NotFound'
 import pix from '../img/imgonline-2.png'
-import Post from '../Posts/Post'
 
 import './Main.css'
 

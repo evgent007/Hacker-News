@@ -23,8 +23,8 @@ function Posts({ btn, clickbtn }) {
       <ol className="cont">
         {data &&
           data.map(d => (
-            <Link to={`/item/${d}`} key={d}>
-              <li className="post color" >
+            <Link key={d} to={`/item/${d}`}>
+              <li className="post color">
                 <Post data={d} />
               </li>
             </Link>

@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { getItem } from '../api'
 
 function Item() {
-  const { id } = useParams()
+  const { id } = useParams()// используется для роутинга
 
   const [item, setItem] = useState({})
 
@@ -13,7 +13,7 @@ function Item() {
 
   return (
     <div className="pos" id={id}>
-      <h3>{item.title && item.title}</h3>
+      {item.title && <h3>{item.title}</h3>}
       <p>
         <b>Автор:</b>
         {item.by} <b> Рейтинг: </b> ({item.score})
