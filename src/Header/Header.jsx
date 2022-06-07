@@ -11,7 +11,7 @@ function Header({ clickbtn }) {
       <div className="clock">
         <Clock />
       </div>
-      {/* <Button click={clickbtn} className="btnheder" /> */}
+      <Button id={1} click={clickbtn}  text="ОБНОВИТЬ" />
       <div className="hedertitle">
         <h1>Hacker News</h1>
       </div>

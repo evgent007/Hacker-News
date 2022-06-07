@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import { useEffect, useState } from 'react'
 import { getItem } from '../api'
+import { Link } from 'react-router-dom'
 
 function Post({ data }) {
   const [item, setItem] = useState({})
@@ -16,17 +17,18 @@ function Post({ data }) {
   // }
 
   return (
-    <div className="pos">
-      <h3>{item.title && item.title}</h3>
+    <Link to={`/item/${data}`}>
+      {item.title && <h3>{item.title}</h3>}
       <p>
-        <b>Автор:</b>
-        {item.by} <b> Рейтинг: </b> ({item.score})
+        <b>Автор : </b>
+        {item.by} <b> Рейтинг : </b> ({item.score})
         <span>
-          <b> дата: </b>
+          <b> дата : </b>
           <i> {new Date(item.time * 1000).toUTCString()} </i>
         </span>
       </p>
-    </div>
+      {item.kids && <div className="comment"> Коментариев : {item.kids.length}</div>}
+    </Link>
   )
 }
 export default Post

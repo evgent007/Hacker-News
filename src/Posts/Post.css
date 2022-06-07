@@ -5,18 +5,49 @@
 }
 
 .color {
-  background-color: rgb(203, 192, 192);
+  background-color: rgba(180, 191, 207, 0.715);
 }
-.pos p {
-  word-spacing: 10px;
+
+p {
+  word-spacing: 5px;
 }
+
 .btnposts {
   position: fixed;
   right: 40px;
   top: 170px;
 }
-.btn1{
+
+.btn1 {
   position: fixed;
   right: 40px;
-  bottom:  20px;
+  bottom: 20px;
+}
+
+.goback {
+  position: fixed;
+  right: 40px;
+  top: 220px;
+}
+
+.text {
+  margin: 10px 50px;
+  padding: 0 20px;
+}
+
+.coment {
+  margin: 10px 40px 10px 10px;
+  padding: 10px 20px;
+  border:  1px dashed;
+}
+.cursor {
+  cursor: pointer;
+}
+
+.line{
+  text-decoration-line: underline;
+}
+
+.cont *{
+  color: rgb(24, 21, 21);
 }

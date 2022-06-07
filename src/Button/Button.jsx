@@ -1,9 +1,9 @@
 import './Button.css'
 
-export default function Button({ click }) {
+export default function Button({ click, text }) {
   return (
     <button className="btn" onClick={click}>
-      ОБНОВИТЬ
+      {text}
     </button>
   )
 }
