@@ -1,13 +1,12 @@
-import { BrowserRouter as Router} from 'react-router-dom'
+import { BrowserRouter as Router } from 'react-router-dom'
 import Header from '../Header/Header'
 import Main from '../Main/Main'
-import { useState} from 'react'
+import { useState } from 'react'
 import './App.css'
 
 function App() {
-
   const [btn, setBtn] = useState(true)
-//  по кнопке обновляем данные с сервера на странице
+  //  по кнопке обновляем данные с сервера на странице
   function onClickBtn(e) {
     console.log('onClickBtn')
     e.target.className = 'btnclick'

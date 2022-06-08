@@ -5,24 +5,21 @@ import Button from '../Button/Button'
 import Button1 from '../Button/Button1'
 import './Post.css'
 
-
 function Home({ btn, clickbtn }) {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    console.log('renderHome', btn)
     getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
+    console.log('render1')
   }, [btn])
 
-  // обновление данных каждую минуту
-
-  // setTimeout(function tick() {
-  //   setYes(!yes)
-  //   console.log('render3', yes)
-  //   setTimeout(tick, 60000) // (*)
-  // }, 60000)
-
-  // setInterval(() => setYes(!yes),console.log('render3', yes), 60000)
+  useEffect(() => {
+    let timer= setInterval(() => {
+      getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
+      console.log('render1.2')
+    }, 60000)
+    return () =>clearInterval(timer)
+  }, [])
 
   // медленный скрол
   // скролит страницу вверх
@@ -33,18 +30,6 @@ function Home({ btn, clickbtn }) {
       behavior: 'smooth',
     })
   }
-  // let s
-  // let timer
-  // function scroll() {
-  //   if (s > 0) {
-  //     window.scrollTo(0, s)
-  //     s = s - 1000
-  //     timer = setTimeout(scroll,100)
-  //   } else {
-  //     clearTimeout(timer)
-  //     window.scrollTo(0, 0)
-  //   }
-  // }
 
   return (
     <>
@@ -68,4 +53,4 @@ function Home({ btn, clickbtn }) {
   )
 }
 
-export default Home
+export { Home }

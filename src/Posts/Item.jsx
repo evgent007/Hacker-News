@@ -4,23 +4,31 @@ import { getItem } from '../api'
 import Button from '../Button/Button'
 import Coments from './Coments'
 
-function Item({ btn}) {
-  const { id } = useParams() // используется для
-  const navigate = useNavigate()
+function Item({ btn }) {
+  // console.log(useParams())
+  const { id } = useParams() //берет id страницы
+  const navigate = useNavigate() //используется для возвращения на
+  const goBack = () => navigate(-1) //предыдущую страницу
 
   const [item, setItem] = useState({})
 
-  const goBack = () => navigate(-1)
+  useEffect(() => {
+    getItem(id).then(d => setItem(d))
+    console.log('render2')
+  }, [btn])
 
   useEffect(() => {
-    console.log('renderComments', btn)
-    getItem(id).then(d => setItem(d))
-  }, [btn])
+    let timer=setInterval(()=> {
+      getItem(id).then(d => setItem(d))
+      console.log('render2.1')
+    }, 60000)
+    return () =>clearInterval(timer)
+  }, [])
 
   return (
     <>
       <div className="goback">
-        <Button click={goBack} text='BACK'/>
+        <Button click={goBack} text="BACK" />
       </div>
       <div className="pos">
         <div className="line">

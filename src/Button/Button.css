@@ -37,6 +37,10 @@ button.btn {
   transition: 0.5s;
 }
 
+.show{
+  opacity: 1;
+}
+
 button {
   cursor: pointer;
 }

@@ -1,12 +1,16 @@
+import { useEffect } from 'react'
 import './Button'
 import icon from '../img/iconmonstr-caret-up-filled-96.png'
 
 export default function Button1({ scroll }) {
-  const rootElement = document.documentElement
-  const elem = document.querySelector('#scrol')
+  useEffect(() => {
+    document.addEventListener('scroll', handleScroll)
+    return () => document.removeEventListener('scroll', handleScroll)
+  })
 
   function handleScroll() {
-    // Do something on scroll
+    const rootElement = document.documentElement
+    const elem = document.querySelector('#scrol')
     const scrollTotal = rootElement.scrollHeight - rootElement.clientHeight
     if (rootElement.scrollTop / scrollTotal < 0.2) {
       // скрыть элемент
@@ -16,8 +20,6 @@ export default function Button1({ scroll }) {
       elem.classList.remove('notshow')
     }
   }
-
-  document.addEventListener('scroll', handleScroll)
 
   return (
     <>
