@@ -7,7 +7,6 @@ export default function GetComent({ com }) {
   const [item, setItem] = useState({})
 
   useEffect(() => {
-   
     getItem(com).then(d => setItem(d))
   }, [])
 

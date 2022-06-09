@@ -5,15 +5,20 @@ import Coments from './Coments'
 export default function Com({ item }) {
   const [kids, setKids] = useState([])
 
-  function comments(e) {
-    const kid = e.currentTarget.id
+  // function comments(e) {
+  //   const kid = e.currentTarget.id
 
-    if (item.id === +kid) {
-      setKids(item.kids)
-    }
+  //   if (item.id === +kid) {
+  //     setKids(item.kids)
+  //   }
+  // }
+
+  function comments() {
+    setKids(item.kids)
   }
+
   return (
-    <div id={item.id} onClick={comments}>
+    <div  onClick={comments}>
       <h3>Коментариев : {item.kids.length}</h3>
       <div className="cursor">
         <p>{item.text}</p>
