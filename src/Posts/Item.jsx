@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getItem } from '../api'
 import Button from '../Button/Button'
+import Button1 from '../Button/Button1'
 import Coments from './Coments'
 
 function Item({ btn }) {
@@ -25,6 +26,8 @@ function Item({ btn }) {
     return () =>clearInterval(timer)
   }, [])
 
+
+
   return (
     <>
       <div className="goback">
@@ -45,6 +48,9 @@ function Item({ btn }) {
             <i> {new Date(item.time * 1000).toUTCString()} </i>
           </p>
         </div>
+      </div>
+      <div className="btn1">
+        <Button1 n={0.9} />
       </div>
 
       {item.text && <p className="text">{item.text}</p>}

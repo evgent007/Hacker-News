@@ -18,7 +18,7 @@ export default function Com({ item }) {
   }
 
   return (
-    <div  onClick={comments}>
+    <div onClick={comments}>
       <h3>Коментариев : {item.kids.length}</h3>
       <div className="cursor">
         <p>{item.text}</p>

@@ -21,15 +21,7 @@ function Home({ btn, clickbtn }) {
     return () =>clearInterval(timer)
   }, [])
 
-  // медленный скрол
-  // скролит страницу вверх
-  function scroll() {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
+  
 
   return (
     <>
@@ -47,7 +39,7 @@ function Home({ btn, clickbtn }) {
           ))}
       </ol>
       <div className="btn1">
-        <Button1 scroll={scroll} />
+        <Button1  n={0.2 }/>
       </div>
     </>
   )

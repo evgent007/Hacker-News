@@ -8,13 +8,16 @@ function Header({ clickbtn }) {
       <div className="logo">
         <img className="payk" src="https://img.icons8.com/clouds/452/scream.png" alt="паук" />
       </div>
-      <div className="clock">
-        <Clock />
-      </div>
-      <Button id={1} click={clickbtn}  text="ОБНОВИТЬ" />
       <div className="hedertitle">
         <h1>Hacker News</h1>
       </div>
+      <div className="clock">
+        <Clock />
+      </div>
+      <Button id={1} click={clickbtn} text="ОБНОВИТЬ" />
+      {/* <div className="hedertitle">
+        <h1>Hacker News</h1>
+      </div> */}
     </header>
   )
 }
