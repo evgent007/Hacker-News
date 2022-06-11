@@ -28,7 +28,7 @@ function Post({ data }) {
         </span>
       </p>
       {item.kids && <div className="comment"> Коментариев : {item.kids.length}</div>}
-      {item.text && <p>есть текст</p>}
+      {item.text && <p>есть текст новости</p>}
     </Link>
   )
 }

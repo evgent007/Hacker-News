@@ -7,7 +7,6 @@ import pix from '../img/imgonline-2.png'
 import './Main.css'
 
 function Main({ btn, clickbtn }) {
-
   return (
     <>
       <main className="main">

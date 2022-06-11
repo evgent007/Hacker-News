@@ -1,6 +1,3 @@
 export default function HtmlText({ html }) {
-  function createMarkup() {
-    return { __html: html }
-  }
-  return <p dangerouslySetInnerHTML={createMarkup()} />
+  return <p dangerouslySetInnerHTML={{ __html: html }} /> // вставляю html dangerouslySetInnerHTML соответствует innerHTML
 }

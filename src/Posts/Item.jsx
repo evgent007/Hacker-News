@@ -3,7 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { getItem } from '../api'
 import Button from '../Button/Button'
 import Button1 from '../Button/Button1'
-import Coments from './Coments'
+import Comments from './Comments'
 import HtmlText from './HtmlText'
 
 function Item({ btn }) {
@@ -16,18 +16,16 @@ function Item({ btn }) {
 
   useEffect(() => {
     getItem(id).then(d => setItem(d))
-    console.log('render2')
+    // console.log('render2')
   }, [btn])
 
   useEffect(() => {
-    let timer=setInterval(()=> {
+    let timer = setInterval(() => {
       getItem(id).then(d => setItem(d))
-      console.log('render2.1')
+      // console.log('render2.1')
     }, 60000)
-    return () =>clearInterval(timer)
+    return () => clearInterval(timer)
   }, [])
-
-
 
   return (
     <>
@@ -54,9 +52,8 @@ function Item({ btn }) {
         <Button1 n={0.7} />
       </div>
       {item.text && <HtmlText html={item.text} />}
-
       {item.kids && <h3>КОМЕНТАРИИ</h3>}
-      <Coments com={item.kids} />
+      <Comments com={item.kids} />
     </>
   )
 }
