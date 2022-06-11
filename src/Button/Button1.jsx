@@ -3,8 +3,8 @@ import './Button'
 import icon from '../img/iconmonstr-caret-up-filled-96.png'
 
 export default function Button1({ n }) {
-  //n часть стр когда появляется стрелка вверх
-  // let classN = 'notshow'
+  //n часть страницы когда появляется стрелка вверх
+
   useEffect(() => {
     document.addEventListener('scroll', handleScroll)
     return () => document.removeEventListener('scroll', handleScroll)
@@ -28,7 +28,7 @@ export default function Button1({ n }) {
     if (rootElement.scrollHeight === rootElement.offsetHeight) {
       elem.classList.add('notshow')
     } else if (rootElement.scrollTop / scrollTotal < n) {
-      //n часть стр когда появляется стрелка вверх
+      //n часть страницы когда появляется стрелка вверх
       // скрыть элемент
       elem.classList.add('notshow')
     } else {

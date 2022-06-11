@@ -4,6 +4,7 @@ import { getItem } from '../api'
 import Button from '../Button/Button'
 import Button1 from '../Button/Button1'
 import Coments from './Coments'
+import HtmlText from './HtmlText'
 
 function Item({ btn }) {
   // console.log(useParams())
@@ -50,10 +51,10 @@ function Item({ btn }) {
         </div>
       </div>
       <div className="btn1">
-        <Button1 n={0.9} />
+        <Button1 n={0.7} />
       </div>
+      {item.text && <HtmlText html={item.text} />}
 
-      {item.text && <p className="text">{item.text}</p>}
       {item.kids && <h3>КОМЕНТАРИИ</h3>}
       <Coments com={item.kids} />
     </>

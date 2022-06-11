@@ -1,17 +1,9 @@
 import { useState } from 'react'
-
+import HtmlText from './HtmlText'
 import Coments from './Coments'
 
 export default function Com({ item }) {
   const [kids, setKids] = useState([])
-
-  // function comments(e) {
-  //   const kid = e.currentTarget.id
-
-  //   if (item.id === +kid) {
-  //     setKids(item.kids)
-  //   }
-  // }
 
   function comments() {
     setKids(item.kids)
@@ -21,9 +13,8 @@ export default function Com({ item }) {
     <div onClick={comments}>
       <h3>Коментариев : {item.kids.length}</h3>
       <div className="cursor">
-        <p>{item.text}</p>
+        {item.text && <HtmlText html={item.text} />}
       </div>
-
       {<Coments com={kids} />}
     </div>
   )

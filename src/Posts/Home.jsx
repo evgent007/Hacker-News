@@ -14,14 +14,12 @@ function Home({ btn, clickbtn }) {
   }, [btn])
 
   useEffect(() => {
-    let timer= setInterval(() => {
+    let timer = setInterval(() => {
       getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
       console.log('render1.2')
     }, 60000)
-    return () =>clearInterval(timer)
+    return () => clearInterval(timer)
   }, [])
-
-  
 
   return (
     <>
@@ -39,7 +37,7 @@ function Home({ btn, clickbtn }) {
           ))}
       </ol>
       <div className="btn1">
-        <Button1  n={0.2 }/>
+        <Button1 n={0.2} />
       </div>
     </>
   )

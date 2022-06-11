@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react'
 import { getItem } from '../api'
 import './Post.css'
 import Com from './Com'
+import HtmlText from './HtmlText'
 
 export default function GetComent({ com }) {
   const [item, setItem] = useState({})
-
-  // const tex = document.querySelector('.com')
 
   useEffect(() => {
     getItem(com).then(d => setItem(d))
@@ -22,7 +21,7 @@ export default function GetComent({ com }) {
         <b> дата : </b>
         <i> {new Date(item.time * 1000).toUTCString()} </i>
       </p>
-      {item.kids ? <Com item={item} /> : <p className="com">{ item.text}</p>}
+      {item.kids ? <Com item={item} /> : item.text && <HtmlText html={item.text} />}
     </div>
   )
 }
