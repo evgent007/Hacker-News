@@ -8,7 +8,7 @@ function App() {
   const [btn, setBtn] = useState(true)
   //  по кнопке обновляем данные с сервера на странице
   function onClickBtn() {
-    console.log('onClickBtn')
+    // console.log('onClickBtn')
     window.scrollTo(0, 0) // скролит страницу вверх
     setBtn(!btn)
   }

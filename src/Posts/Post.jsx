@@ -19,7 +19,7 @@ function Post({ data }) {
         {item.by} <b> Рейтинг : </b> ({item.score})
         <span>
           <b> дата : </b>
-          <i> {new Date(item.time * 1000).toUTCString()} </i>
+          <i> {new Date(item.time * 1000).toLocaleString()} </i>
         </span>
       </p>
       {item.kids && <div className="comment"> Коментариев : {item.kids.length}</div>}
