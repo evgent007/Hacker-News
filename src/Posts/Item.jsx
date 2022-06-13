@@ -8,12 +8,11 @@ import HtmlText from './HtmlText'
 import Preloader from './Preloader'
 
 function Item({ btn }) {
-  // console.log(useParams())
   const { id } = useParams() //берет id страницы
   const navigate = useNavigate() //используется для возвращения на
   const goBack = () => navigate(-1) //предыдущую страницу
 
-  const [item, setItem] = useState({d:{},loading:false})
+  const [item, setItem] = useState({ d: {}, loading: false })
 
   useEffect(() => {
     getItem(id).then(d => setItem({ d: d, loading: true }))
@@ -22,7 +21,6 @@ function Item({ btn }) {
   useEffect(() => {
     let timer = setInterval(() => {
       getItem(id).then(d => setItem({ d: d, loading: true }))
-      // console.log('render2.1')
     }, 60000)
     return () => clearInterval(timer)
   }, [])
@@ -49,9 +47,9 @@ function Item({ btn }) {
   return (
     <>
       <div className="goback">
-        <Button click={goBack} text="BACK" clName='btn2' />
+        <Button click={goBack} text="BACK" clName="btn2" />
       </div>
-      {!item.loading ? <Preloader/> : itemlode}
+      {!item.loading ? <Preloader /> : itemlode}
       <div className="btn1">
         <Button1 n={0.7} />
       </div>

@@ -1,5 +1,5 @@
 import './Header.css'
-import Clock1 from './Clock1'
+import Clock from './Clock'
 import Button from '../Button/Button'
 
 function Header({ clickbtn }) {
@@ -12,7 +12,7 @@ function Header({ clickbtn }) {
         <h1>Hacker News</h1>
       </div>
       <div className="clock">
-        <Clock1 />
+        <Clock />
       </div>
       <Button click={clickbtn} text="ОБНОВИТЬ" clName="btn" />
     </header>
