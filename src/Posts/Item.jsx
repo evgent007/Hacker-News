@@ -5,6 +5,7 @@ import Button from '../Button/Button'
 import Button1 from '../Button/Button1'
 import Comments from './Comments'
 import HtmlText from './HtmlText'
+import Preloader from './Preloader'
 
 function Item({ btn }) {
   // console.log(useParams())
@@ -12,48 +13,51 @@ function Item({ btn }) {
   const navigate = useNavigate() //используется для возвращения на
   const goBack = () => navigate(-1) //предыдущую страницу
 
-  const [item, setItem] = useState({})
+  const [item, setItem] = useState({d:{},loading:false})
 
   useEffect(() => {
-    getItem(id).then(d => setItem(d))
-    // console.log('render2')
+    getItem(id).then(d => setItem({ d: d, loading: true }))
   }, [btn])
 
   useEffect(() => {
     let timer = setInterval(() => {
-      getItem(id).then(d => setItem(d))
+      getItem(id).then(d => setItem({ d: d, loading: true }))
       // console.log('render2.1')
     }, 60000)
     return () => clearInterval(timer)
   }, [])
 
+  const itemlode = (
+    <div className="pos">
+      <div className="line">
+        <a href={item.d.url}>{item.d.title && <h3>{item.d.title}</h3>}</a>
+      </div>
+      {item.d.kids && <h4>коментариев : {item.d.kids.length}</h4>}
+      <p>
+        <b>Автор : </b>
+        {item.d.by} <b> Рейтинг : </b> ({item.d.score})
+      </p>
+      <div>
+        <p>
+          <b> дата : </b>
+          <i> {new Date(item.d.time * 1000).toUTCString()} </i>
+        </p>
+      </div>
+    </div>
+  )
+
   return (
     <>
       <div className="goback">
-        <Button click={goBack} text="BACK" />
+        <Button click={goBack} text="BACK" clName='btn2' />
       </div>
-      <div className="pos">
-        <div className="line">
-          <a href={item.url}>{item.title && <h3>{item.title}</h3>}</a>
-        </div>
-        {item.kids && <h4>коментариев : {item.kids.length}</h4>}
-        <p>
-          <b>Автор : </b>
-          {item.by} <b> Рейтинг : </b> ({item.score})
-        </p>
-        <div>
-          <p>
-            <b> дата : </b>
-            <i> {new Date(item.time * 1000).toUTCString()} </i>
-          </p>
-        </div>
-      </div>
+      {!item.loading ? <Preloader/> : itemlode}
       <div className="btn1">
         <Button1 n={0.7} />
       </div>
-      {item.text && <HtmlText html={item.text} />}
-      {item.kids && <h3>КОМЕНТАРИИ</h3>}
-      <Comments com={item.kids} />
+      {item.d.text && <HtmlText html={item.d.text} />}
+      {item.d.kids && <h3>КОМЕНТАРИИ</h3>}
+      <Comments com={item.d.kids} />
     </>
   )
 }

@@ -2,6 +2,15 @@ element {
   --pricolor: #237a7a;
 }
 
+.btnclick {
+  width: 150px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  background-color: #074a4a;
+  color: #fff;
+}
+
 button.btn {
   width: 150px;
   height: 50px;
@@ -11,13 +20,13 @@ button.btn {
   color: #237a7a;
 }
 
-.btnclick {
+button.btn2 {
   width: 150px;
   height: 50px;
   border-radius: 10px;
-  border: none;
-  background-color: #074a4a;
-  color: #fff;
+  border: solid 1px;
+  background-color: rgba(186, 236, 236, 0.8);
+  color: #237a7a;
 }
 
 .scrol {

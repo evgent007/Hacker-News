@@ -6,19 +6,14 @@ import { Link } from 'react-router-dom'
 function Post({ data }) {
   const [item, setItem] = useState({})
 
+
   useEffect(() => {
     getItem(data).then(d => setItem(d))
   }, [])
 
-  // function onClickItem(e) {
-  //   const idItem = e.currentTarget.id
-  //   console.log(idItem)
-  //   return idItem
-  // }
-
   return (
     <Link to={`/item/${data}`}>
-      {item.title && <h3>{item.title}</h3>}
+      {item.title ? <h3>{item.title}</h3> : <h3>ПУСТО</h3>}
       <p>
         <b>Автор : </b>
         {item.by} <b> Рейтинг : </b> ({item.score})

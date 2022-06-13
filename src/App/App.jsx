@@ -7,11 +7,9 @@ import './App.css'
 function App() {
   const [btn, setBtn] = useState(true)
   //  по кнопке обновляем данные с сервера на странице
-  function onClickBtn(e) {
+  function onClickBtn() {
     console.log('onClickBtn')
-    e.target.className = 'btnclick'
     window.scrollTo(0, 0) // скролит страницу вверх
-    setInterval(() => (e.target.className = 'btn'), 700)
     setBtn(!btn)
   }
 
