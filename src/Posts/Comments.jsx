@@ -8,7 +8,7 @@ export default function Comments({ com }) {
     <ul>
       {com &&
         com.map(c => (
-          <li key={c}>
+          <li key={c} className="comments">
             <GetComment com={c} />
           </li>
         ))}
@@ -24,7 +24,7 @@ function GetComment({ com }) {
   }, [])
 
   return (
-    <div className="coment color">
+    <div className="coment color1">
       <p>
         <b>Автор : </b>
         {item.by} <b> Рейтинг : </b> ({item.score})
@@ -53,5 +53,3 @@ function Comm({ item }) {
     </div>
   )
 }
-
-

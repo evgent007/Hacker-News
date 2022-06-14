@@ -1,11 +1,15 @@
 .post {
-  margin: 10px 40px 10px 10px;
-  padding: 10px 0;
+  margin: 0px 40px 0px 10px;
+  padding: 1px 0;
   /* border: 1px solid black; */
 }
 
-.color {
-  background-color: rgba(180, 191, 207, 0.715);
+.color1 {
+  background-color: rgba(180, 191, 207, 0.315);
+}
+
+.color2 {
+  background-color:rgba(142, 151, 165, 0.941)
 }
 
 p {
@@ -38,16 +42,26 @@ p {
 .coment {
   margin: 10px 40px 10px 10px;
   padding: 10px 20px;
-  border:  1px dashed;
+  border: 1px dashed;
 }
 .cursor {
   cursor: pointer;
 }
 
-.line{
+.line a {
   text-decoration-line: underline;
+  color: rgb(24, 21, 21);
 }
 
-.cont *{
+.cont * {
   color: rgb(24, 21, 21);
+  text-decoration: none;
+}
+
+.comments {
+  list-style-type: none;
+}
+
+.item  {
+  padding: 0 40px;
 }

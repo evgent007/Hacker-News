@@ -1,15 +1,15 @@
 import './Button.css'
 
-export default function Button({ click, text, clName }) {
+export default function Button(props) {
 
-  function click1(e) {
+  function handlerClick(e) {
     e.target.className = 'btnclick'
     setTimeout(() => (e.target.className = 'btn'), 500)
-    click()
+    props.onClick()
   }
   return (
-    <button className={clName} onClick={click1} >
-      {text}
+    <button {...props} onClick={handlerClick} title={props.children}>
+      {props.children}
     </button>
   )
 }

@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom'
 function Post({ data }) {
   const [item, setItem] = useState({})
 
-
   useEffect(() => {
     getItem(data).then(d => setItem(d))
   }, [])
@@ -21,9 +20,10 @@ function Post({ data }) {
           <b> дата : </b>
           <i> {new Date(item.time * 1000).toLocaleString()} </i>
         </span>
+        {item.text && <span>--(есть текст новости)</span>}
+        {item.url && <span>--(есть ссылка)</span>}
+        {item.kids && <span> Коментариев : {item.kids.length}</span>}
       </p>
-      {item.kids && <div className="comment"> Коментариев : {item.kids.length}</div>}
-      {item.text && <p>есть текст новости</p>}
     </Link>
   )
 }

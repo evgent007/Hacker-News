@@ -26,9 +26,9 @@ function Item({ btn }) {
   }, [])
 
   const itemlode = (
-    <div className="pos">
+    <div className="">
       <div className="line">
-        <a href={item.d.url}>{item.d.title && <h3>{item.d.title}</h3>}</a>
+        {item.d.url ? <a href={item.d.url}>{item.d.title && <h3>{item.d.title}</h3>}</a> : item.d.title && <h3>{item.d.title}</h3>}
       </div>
       {item.d.kids && <h4>коментариев : {item.d.kids.length}</h4>}
       <p>
@@ -47,14 +47,18 @@ function Item({ btn }) {
   return (
     <>
       <div className="goback">
-        <Button click={goBack} text="BACK" clName="btn2" />
+        <Button onClick={goBack} className="btn2">
+          BACK
+        </Button>
       </div>
       {!item.loading ? <Preloader /> : itemlode}
       <div className="btn1">
         <Button1 n={0.7} />
       </div>
-      {item.d.text && <HtmlText html={item.d.text} />}
-      {item.d.kids && <h3>КОМЕНТАРИИ</h3>}
+      <div className="item">
+        {item.d.text && <HtmlText html={item.d.text} />}
+        {item.d.kids && <h3>КОМЕНТАРИИ</h3>}
+      </div>
       <Comments com={item.d.kids} />
     </>
   )
