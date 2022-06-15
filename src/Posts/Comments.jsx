@@ -5,14 +5,16 @@ import './Post.css'
 
 export default function Comments({ com }) {
   return (
-    <ul>
-      {com &&
-        com.map(c => (
-          <li key={c} className="comments">
-            <GetComment com={c} />
-          </li>
-        ))}
-    </ul>
+    <div className="marg">
+      <ul className="comments">
+        {com &&
+          com.map(c => (
+            <li key={c}>
+              <GetComment com={c} />
+            </li>
+          ))}
+      </ul>
+    </div>
   )
 }
 

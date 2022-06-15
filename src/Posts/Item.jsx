@@ -45,7 +45,7 @@ function Item({ btn }) {
   )
 
   return (
-    <>
+    <div className="itempage">
       <div className="goback">
         <Button onClick={goBack} className="btn2">
           BACK
@@ -60,7 +60,7 @@ function Item({ btn }) {
         {item.d.kids && <h3>КОМЕНТАРИИ</h3>}
       </div>
       <Comments com={item.d.kids} />
-    </>
+    </div>
   )
 }
 export default Item

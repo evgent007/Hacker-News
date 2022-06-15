@@ -4,18 +4,20 @@ import Post from './Post'
 import Button1 from '../Button/Button1'
 import './Post.css'
 
-function Home({ btn, clickbtn }) {
+function Home({ btn }) {
   const [data, setData] = useState(null)
 
   useEffect(() => {
-    getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
-    .catch(error => console.log(error) )
+    getHackerNews('newstories')
+      .then(d => setData(d.splice(0, 100)))
+      .catch(error => console.log(error))
   }, [btn])
 
   useEffect(() => {
     let timer = setInterval(() => {
-      getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
-      .catch(error => console.log(error) )
+      getHackerNews('newstories')
+        .then(d => setData(d.splice(0, 100)))
+        .catch(error => console.log(error))
     }, 60000)
     return () => clearInterval(timer)
   }, [])
@@ -39,15 +41,7 @@ function Home({ btn, clickbtn }) {
 
   return (
     <>
-      <ol className="cont">
-        {/* {data &&
-          data.map((d, i) => (
-            <li id="collor" className="post color" key={d}>
-              <Post data={d} />
-            </li>
-          ))} */}
-        {list}
-      </ol>
+      <ol className="cont">{list}</ol>
       <div className="btn1">
         <Button1 n={0.2} />
       </div>

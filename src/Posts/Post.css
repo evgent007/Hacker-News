@@ -40,8 +40,8 @@ p {
 }
 
 .coment {
-  margin: 10px 40px 10px 10px;
-  padding: 10px 20px;
+  margin-top: 3px;
+  padding: 10px 10px;
   border: 1px dashed;
 }
 .cursor {
@@ -56,12 +56,27 @@ p {
 .cont * {
   color: rgb(24, 21, 21);
   text-decoration: none;
+  list-style-type: none;
+}
+
+.cont {
+  padding-bottom: 30px;
 }
 
 .comments {
   list-style-type: none;
+  margin-left: 0; /* Отступ слева в браузере IE и Opera */
+  padding-left: 0;
 }
 
 .item  {
   padding: 0 40px;
+}
+
+.marg {
+  margin: 10px 20px ;
+}
+
+.itempage {
+  padding-bottom: 30px;
 }

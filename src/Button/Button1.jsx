@@ -3,20 +3,6 @@ import './Button'
 import icon from '../img/iconmonstr-caret-up-filled-96.png'
 
 export default function Button1({ n }) {
-  //n часть страницы когда появляется стрелка вверх
-  useEffect(() => {
-    document.addEventListener('scroll', handlerScroll)
-    return () => document.removeEventListener('scroll', handlerScroll)
-  })
-  // медленный скрол
-  // скролит страницу вверх
-  function scroll() {
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth',
-    })
-  }
 
   function handlerScroll() {
     const rootElement = document.documentElement
@@ -33,6 +19,20 @@ export default function Button1({ n }) {
       // показать элемент
       elem.classList.remove('notshow')
     }
+  }
+  //n часть страницы когда появляется стрелка вверх
+  useEffect(() => {
+    document.addEventListener('scroll', handlerScroll)
+    return () => document.removeEventListener('scroll', handlerScroll)
+  })
+  // медленный скрол
+  // скролит страницу вверх
+  function scroll() {
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: 'smooth',
+    })
   }
 
   return (

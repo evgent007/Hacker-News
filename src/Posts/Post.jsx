@@ -12,18 +12,18 @@ function Post({ data }) {
 
   return (
     <Link to={`/item/${data}`}>
-      {item.title ? <h3>{item.title}</h3> : <h3>ПУСТО</h3>}
+      {item.title && <h3>{item.title}</h3> }
       <p>
         <b>Автор : </b>
-        {item.by} <b> Рейтинг : </b> ({item.score})
-        <span>
-          <b> дата : </b>
+        {item.by}  -- <b> Рейтинг : </b> ({item.score})
+        <span> --
+          <b> Дата : </b>
           <i> {new Date(item.time * 1000).toLocaleString()} </i>
         </span>
-        {item.text && <span>--(есть текст новости)</span>}
-        {item.url && <span>--(есть ссылка)</span>}
+        {item.text && <span> -- (есть текст новости)</span>}
+        {item.url && <span> -- (есть ссылка)</span>}
         {item.kids && <span> Коментариев : {item.kids.length}</span>}
-      </p>
+      </p> 
     </Link>
   )
 }
