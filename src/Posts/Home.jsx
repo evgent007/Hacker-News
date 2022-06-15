@@ -9,11 +9,13 @@ function Home({ btn, clickbtn }) {
 
   useEffect(() => {
     getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
+    .catch(error => console.log(error) )
   }, [btn])
 
   useEffect(() => {
     let timer = setInterval(() => {
       getHackerNews('newstories').then(d => setData(d.splice(0, 100)))
+      .catch(error => console.log(error) )
     }, 60000)
     return () => clearInterval(timer)
   }, [])
